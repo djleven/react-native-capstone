@@ -39,13 +39,13 @@ export const formStyles = StyleSheet.create({
       fontSize: 18,
       color: '#EDEFEE',
       textAlign: 'center',
-      backgroundColor: 'darkgreen'
+      backgroundColor: '#495E57'
     },
     buttonSecondary: {
       borderRadius: 5,
       padding: 10,
       fontSize: 18,
-      color: 'darkgreen',
+      color: '#495E57',
       textAlign: 'center',
       backgroundColor: '#EDEFEE'
     },

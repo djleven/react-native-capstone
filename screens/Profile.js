@@ -1,4 +1,4 @@
-import { Alert, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ScrollView, View, Text, Image, TextInput, Pressable, StyleSheet } from 'react-native';
 import AvatarPicker from '../components/AvatarPicker';
 import Checkbox from 'expo-checkbox';
@@ -115,7 +115,7 @@ const ProfileScreen = ({data, setData}) => {
               style={styles.checkbox}
               value={hasOrderStatus}
               onValueChange={setHasOrderStatus}
-              color={hasOrderStatus ? 'darkgreen' : undefined}
+              color={hasOrderStatus ? '#495E57' : undefined}
             />
             <Text style={styles.paragraph}>Order statuses</Text>
           </View>
@@ -124,7 +124,7 @@ const ProfileScreen = ({data, setData}) => {
               style={styles.checkbox}
               value={hasPasswordChange}
               onValueChange={setHasPasswordChange}
-              color={hasPasswordChange ? 'darkgreen' : undefined}
+              color={hasPasswordChange ? '#495E57' : undefined}
             />
             <Text style={styles.paragraph}>Password changes</Text>
           </View>
@@ -133,7 +133,7 @@ const ProfileScreen = ({data, setData}) => {
               style={styles.checkbox}
               value={hasSpecialOffers}
               onValueChange={setHasSpecialOffers}
-              color={hasSpecialOffers ? 'darkgreen' : undefined}
+              color={hasSpecialOffers ? '#495E57' : undefined}
             />
             <Text style={styles.paragraph}>Special offers</Text>
           </View>
@@ -142,7 +142,7 @@ const ProfileScreen = ({data, setData}) => {
               style={styles.checkbox}
               value={hasNewsletter}
               onValueChange={setHasNewsletter}
-              color={hasNewsletter ? 'darkgreen' : undefined}
+              color={hasNewsletter ? '#495E57' : undefined}
             />
             <Text style={styles.paragraph}>Newsletter</Text>
           </View>

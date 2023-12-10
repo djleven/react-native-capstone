@@ -43,6 +43,7 @@ export class UserInfoStorage {
   
     saveData = async () => {
       try {
+        console.log(this.data, 'thiasi aisjd oaijsdasjd lijl')
         return await AsyncStorage.setItem(this.storageKey, this.stringifyData());
       } catch (e) {
         console.log(e, 'saveData error')

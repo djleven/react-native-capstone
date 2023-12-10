@@ -5,7 +5,7 @@ export const validateEmail = (email) => {
   };
   
 export const validateName = (name) => {
-    return name?.length && name.match(/^[a-zA-Z]+$/);
+    return name?.length && name.match(/^[\w\-\s]+$/);
 };
 
 export const validatePhoneNumberUSA = (number) => {

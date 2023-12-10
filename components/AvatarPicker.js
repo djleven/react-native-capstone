@@ -1,5 +1,6 @@
 import { Image, View, Text, Pressable, StyleSheet } from 'react-native';
 import { formStyles } from '../styles';
+import Avatar from './Avatar';
 
 import * as ImagePicker from 'expo-image-picker';
 
@@ -22,27 +23,14 @@ function AvatarPicker({firstName, lastName, imageURI, setImage}) {
     setImage(null)
   }
 
-  const getInitial = (str) => {
-
-    return str ? Array.from(str)[0] : '?';
-  }
-
   return (
     <View style={styles.container}>
-      {imageURI ?
-    <Image
-      style={styles.avatar}
-      source={{ uri: imageURI }}
-      resizeMode="contain"
-      accessible={true}buttonSecondary
-      accessibilityLabel={'Little Lemon Logo'}
-    /> :
-
-    <View style={styles.placeholder}>
-      <Text style={styles.placeholderText}> {getInitial(firstName)}</Text>
-      <Text style={styles.placeholderText}> {getInitial(lastName)}</Text>
-    </ View>
-  }
+    <Avatar
+      firstName={firstName}
+      lastName={lastName}
+      imageURI={imageURI}
+      accessibilityLabel={'User profile avatar'}
+    />
     <Pressable onPress={ removeImage } disabled={!imageURI}>
         <Text style={[{opacity: imageURI ? 1 : 0.5}, formStyles.buttonSecondary]} >
           Remove
