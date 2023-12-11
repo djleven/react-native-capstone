@@ -90,7 +90,7 @@ export default function HomeScreen() {
         }
         return filterSelections[i];
       });
-      console.log(activeCategories, 'aciveree')
+
       try {
         const menuItems = await filterByQueryAndCategories(
           query,
@@ -118,8 +118,6 @@ export default function HomeScreen() {
   const handleFiltersChange = async (index) => {
     const arrayCopy = [...filterSelections];
     arrayCopy[index] = !filterSelections[index];
-    console.log(arrayCopy, 'weewew')
-
     setFilterSelections(arrayCopy);
   };
 
@@ -130,18 +128,22 @@ export default function HomeScreen() {
         subtitle="Chicago"
         description="We are a family owned restaurant, focused on traditional recipes served with a modern twist."
         imageSrc={require("../assets/restaurantfood.jpg")}
+        action={
+          <Searchbar
+            placeholder="Search"
+            placeholderTextColor="#495E57"
+            onChangeText={handleSearchChange}
+            value={searchBarText}
+            style={styles.searchBar}
+            iconColor="#495E57"
+            inputStyle={{ color: '#495E57' }}
+            elevation={0}
+          />
+        }
       />
-      <Text style={styles.cta}> Order online!</Text>
-      <Searchbar
-        placeholder="Search"
-        placeholderTextColor="white"
-        onChangeText={handleSearchChange}
-        value={searchBarText}
-        style={styles.searchBar}
-        iconColor="white"
-        inputStyle={{ color: 'white' }}
-        elevation={0}
-      />
+
+       <Text style={styles.cta}> Order for delivery!</Text>
+
       <Filters
         selections={filterSelections}
         onChange={handleFiltersChange}
@@ -175,8 +177,8 @@ const styles = StyleSheet.create({
   },
   searchBar: {
     marginBottom: 24,
-    marginHorizontal: 20,
-    backgroundColor: '#495E57',
+    marginHorizontal: 10,
+    backgroundColor: 'white',
     shadowRadius: 0,
     shadowOpacity: 0,
   },

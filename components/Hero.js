@@ -1,7 +1,7 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
 
 
-const Hero = ({title, subtitle, description, imageSrc}) => {
+const Hero = ({title, subtitle, description, imageSrc, action}) => {
     
     return (
 
@@ -20,6 +20,7 @@ const Hero = ({title, subtitle, description, imageSrc}) => {
                     accessibilityLabel={title}
                 />
             </View>
+            {action}
            
         </View>
     );
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     },
     column2: {
         flex: 0.8,
-        flexDirection: 'column'
+        flexDirection: 'column',
     },
     title: {
         fontSize: 30,
@@ -61,8 +62,9 @@ const styles = StyleSheet.create({
     },
     image: {
         marginRight: 20,
-      width: 150,
-      height: 150,
+        width: 150,
+        height: 150,
+        paddingTop:20
     },
 
   });
