@@ -31,7 +31,6 @@ export async function getMenuItems() {
 
 export async function saveMenuItems(menuItems) {
 
-  console.log(menuItems, 'menuitmedss')
   const items = menuItems.map((item) =>`("${item.name}", "${item.price}", "${item.description}", "${item.image}", "${item.category}")`).join(", ");
 
   db.transaction((tx) => {
@@ -58,7 +57,6 @@ export async function filterByQueryAndCategories(query, activeCategories) {
   return new Promise((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(`SELECT * from menuitems WHERE category IN (${replacementSymbols.slice(0, -1) }) AND name LIKE ?`, variables, (_, { rows }) => {
-        console.log(rows._array)
         resolve(rows._array);
       }, (a,e) => console.error(e.message));
     });
